@@ -7,8 +7,6 @@ import {
     OnDestroy,
     OnInit,
     Output,
-    Renderer,
-    ɵlooseIdentical
 } from '@angular/core';
 import * as MediumEditor from 'medium-editor';
 
