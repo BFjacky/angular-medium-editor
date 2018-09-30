@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "medium-editor": "5.23.3"
+  },
+  "devDependencies": {}
 }
