@@ -11,15 +11,10 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    setTimeout(() => {
-      this.customEvents = [`editableClick`];
-      setTimeout(() => {
-        console.log(`又变了`);
-        this.customEvents = ['editableInput'];
-      }, 2000);
-    }, 2000);
+    // 监听输入框点击事件和输入事件
+    this.customEvents = [`editableClick`, `editableInput`];
   }
   handleCustomEvents($event) {
-    console.log($event);
+    // handleEvent
   }
 }

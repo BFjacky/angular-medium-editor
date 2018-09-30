@@ -18,8 +18,8 @@ import * as MediumEditor from 'medium-editor';
 export class MediumEditorComponent implements OnInit, OnDestroy, OnChanges {
     @Input() options: object;
     @Input() bodyStyle: object;
-    @Input() subscribeCustomEvents: [string];
-    @Output() customEvents = new EventEmitter();
+    @Input() customEvents: [string];
+    @Output() subscribeCustomEvents = new EventEmitter();
     editor: any;
     listenerMap = {
 
@@ -32,15 +32,15 @@ export class MediumEditorComponent implements OnInit, OnDestroy, OnChanges {
 
     }
     ngOnChanges(changes) {
-        if (changes.subscribeCustomEvents) {
-            let { currentValue, previousValue } = changes.subscribeCustomEvents;
+        if (changes.customEvents) {
+            let { currentValue, previousValue } = changes.customEvents;
             currentValue = Array.from(new Set(currentValue));
             previousValue = previousValue || [];
             currentValue.forEach(event => {
                 if (!previousValue.includes(event)) {
                     if (!this.listenerMap[event]) {
                         this.listenerMap[event] = () => {
-                            this.customEvents.emit({ event });
+                            this.subscribeCustomEvents.emit({ event });
                         };
                     }
                     this.editor.subscribe(event, this.listenerMap[event]);
