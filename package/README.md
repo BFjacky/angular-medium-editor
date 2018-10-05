@@ -27,11 +27,18 @@ import { MediumEditorModule} from 'angular6-medium-editor'
 ```
 ```ts
 ngOnInit() {
-  // 监听输入框点击事件和输入事件
+  // listening click event & input event
   this.customEvents = [`editableClick`, `editableInput`];
 }
 handleCustomEvents($event) {
   // handleEvent
 }
+```
+import style in your styles.css
+```css
+/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/medium-editor/dist/css/medium-editor.css';
+//choose your medium-editor theme
+@import 'node_modules/medium-editor/dist/css/themes/beagle.css';
 ```
 >more Custom Events see: https://github.com/yabwe/medium-editor/blob/master/CUSTOM-EVENTS.md

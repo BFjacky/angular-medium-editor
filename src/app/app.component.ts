@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    // 监听输入框点击事件和输入事件
+    // 监听输入框点击事件和输入事件
     this.customEvents = [`editableClick`, `editableInput`];
   }
   handleCustomEvents($event) {
